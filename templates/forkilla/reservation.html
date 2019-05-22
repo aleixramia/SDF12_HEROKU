@@ -1,0 +1,16 @@
+
+
+{% extends 'forkilla/base.html' %}
+
+
+{% block content %}
+<body>
+<h2> Starting reservation for restaurant {{restaurant.name}}</h2>
+    <form method="POST" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</body>
+
+{% endblock %}

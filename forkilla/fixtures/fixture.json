@@ -1,0 +1,207 @@
+[
+  {
+    "model": "forkilla.Restaurant",
+    "pk": 1,
+    "fields": {
+      "restaurant_number": "09186777",
+      "name": "Only Tapas",
+      "menu_description" :"TAPAS",
+      "price_average" : "30",
+      "is_promot" : "False",
+      "rate" : "10",
+      "category" : "Medi",
+      "city": "Barcelona",
+      "address": "Les Rambles, 33",
+      "country": "Spain",
+      "restaurant_capacity": 40
+    }
+  },
+   {
+    "model": "forkilla.Restaurant",
+    "pk": 2,
+    "fields": {
+      "restaurant_number": "09186666",
+      "name": "Only Pinxos",
+      "menu_description" :"PINXOS",
+      "price_average" : "130.33",
+      "is_promot" : "True",
+      "rate" : "9.6",
+      "category" : "Basq",
+      "city": "Barcelona",
+      "address": "Gran Via de les Corts Catalanes, 495",
+      "country": "Spain",
+      "restaurant_capacity": 240
+    }
+  },
+   {
+    "model": "forkilla.Restaurant",
+    "pk": 3,
+    "fields": {
+      "restaurant_number": "09186524",
+      "name": "Furawa",
+      "menu_description" :"Sushi buffet",
+      "price_average" : "13.68",
+      "is_promot" : "True",
+      "rate" : "8.6",
+      "category" : "Japa",
+      "city": "Barcelona",
+      "address": "Diputacio, 77",
+      "country": "Spain",
+      "restaurant_capacity": 38
+    }
+  },
+  {
+    "model": "forkilla.Restaurant",
+    "pk": 4,
+    "fields": {
+      "restaurant_number": "09186654",
+      "name": "Ramiolini's",
+      "menu_description" :"Raviolis à la Ramia",
+      "price_average" : "300",
+      "is_promot" : "True",
+      "rate" : "7.5",
+      "category" : "Ital",
+      "city": "Barcelona",
+      "address": "Carrer del barcu, 155",
+      "country": "Catalunya",
+      "restaurant_capacity": 44
+    }
+  },
+  {
+    "model": "forkilla.Restaurant",
+    "pk": 5,
+    "fields": {
+      "restaurant_number": "09126664",
+      "name": "Puzzels",
+      "menu_description" :"True american",
+      "price_average" : "18",
+      "is_promot" : "True",
+      "rate" : "7.6",
+      "category" : "BBQ",
+      "city": "Barceolna",
+      "address": "Valencia, 42",
+      "country": "Spain",
+      "restaurant_capacity": 50
+    }
+  },
+  {
+    "model": "forkilla.Restaurant",
+    "pk": 6,
+    "fields": {
+      "restaurant_number": "09186364",
+      "name": "Bulli",
+      "menu_description" :"Cuina loca",
+      "price_average" : "200",
+      "is_promot" : "False",
+      "rate" : "9.1",
+      "category" : "Fusi",
+      "city": "Barcelona",
+      "address": "Carrer Arago 98",
+      "country": "Spain",
+      "restaurant_capacity": 30
+    }
+  },
+  {
+    "model": "forkilla.Restaurant",
+    "pk": 7,
+    "fields": {
+      "restaurant_number": "09186764",
+      "name": "La Principal",
+      "menu_description" :"El bar de la gent cuqui",
+      "price_average" : "3",
+      "is_promot" : "False",
+      "rate" : "8.1",
+      "category" : "Afri",
+      "city": "Barcelona",
+      "address": "Sepulveda 18",
+      "country": "Spain",
+      "restaurant_capacity": 28
+    }
+  },
+  {
+    "model": "forkilla.Restaurant",
+    "pk": 8,
+    "fields": {
+      "restaurant_number": "09186164",
+      "name": "Sultan",
+      "menu_description" :"Patates a 1€",
+      "price_average" : "1",
+      "is_promot" : "False",
+      "rate" : "10",
+      "category" : "Turk",
+      "city": "Barcelona",
+      "address": "Joaquim costa, 12",
+      "country": "Spain",
+      "restaurant_capacity": 6
+    }
+  },
+  {
+    "model": "forkilla.Restaurant",
+    "pk": 9,
+    "fields": {
+      "restaurant_number": "09186964",
+      "name": "Martingala",
+      "menu_description" :"Tapas de formatge",
+      "price_average" : "1.90",
+      "is_promot" : "True",
+      "rate" : "9.1",
+      "category" : "Fusi",
+      "city": "Sant Esteve de les Roures",
+      "address": "Llancà, 2",
+      "country": "Spain",
+      "restaurant_capacity": 10
+    }
+  },
+  {
+    "model": "forkilla.Restaurant",
+    "pk": 10,
+    "fields": {
+      "restaurant_number": "09286664",
+      "name": "Let's get Nut's",
+      "menu_description" :"Ideal Allergics",
+      "price_average" : "16.0",
+      "is_promot" : "True",
+      "rate" : "8.9",
+      "category" : "Russ",
+      "city": "Moià",
+      "address": "Casanoves, 24",
+      "country": "Spain",
+      "restaurant_capacity": 19
+    }
+  },
+  {
+    "model": "forkilla.Restaurant",
+    "pk": 11,
+    "fields": {
+      "restaurant_number": "09186564",
+      "name": "Casa Iragorri",
+      "menu_description" :"Gazpacho and stuff",
+      "price_average" : "24",
+      "is_promot" : "False",
+      "rate" : "7.5",
+      "category" : "Basq",
+      "city": "Irazkun",
+      "address": "Mallorca, 36",
+      "country": "Spain",
+      "restaurant_capacity": 90
+    }
+  },
+  {
+    "model": "forkilla.Restaurant",
+    "pk": 12,
+    "fields": {
+      "restaurant_number": "09186664",
+      "name": "Chez Lidia",
+      "menu_description" :"Patates fregides",
+      "price_average" : "11",
+      "is_promot" : "False",
+      "rate" : "6.1",
+      "category" : "Medi",
+      "city": "Pont de Vilomara",
+      "address": "Whoknows, 2",
+      "country": "Spain",
+      "restaurant_capacity": 45
+    }
+  }
+
+]

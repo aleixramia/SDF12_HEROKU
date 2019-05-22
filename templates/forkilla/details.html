@@ -1,0 +1,65 @@
+{% extends 'forkilla/base.html' %}
+
+
+{% block content %}
+
+    <!--BREADCRUMB-->
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{%  url 'index' %}">Forkilla</a></li>
+          <li class="breadcrumb-item"><a href="{% url 'restaurants' restaurant.city%}">{{ restaurant.city }}</a></li>
+          <li class="breadcrumb-item"><a href="{% url 'restaurants' restaurant.city restaurant.category%}">{{ restaurant.category }}</a></li>
+          <li class="breadcrumb-item active">{{ restaurant.name }}</li>
+      </ol>
+    </nav>
+
+    <!--END BREADCRUMB-->
+<h1>Restaurant details</h1>
+
+{% if restaurant%}
+<h2> {{restaurant.name}} </h2>
+
+<p>
+    <ul>
+
+    <li>
+            Photo: {{ restuarant.featured_photo }}
+    </li>
+    <li>
+            Description: {{restaurant.menu_description}}
+    </li>
+    <li>
+            Price average: {{restaurant.price_average}}
+    </li>
+    <li>
+            Is promoted: {{ restaurant.is_promot }}
+    </li>
+    <li>
+            Rating: {{ restaurant.rate }}
+    </li>
+    <li>
+            Category: {{ restaurant.category }}
+    </li>
+    <li>
+            City: {{ restaurant.city }}
+    </li>
+    <li>
+            Address: {{ restaurant.address }}
+    </li>
+    <li>
+            Country: {{ restaurant.country }}
+    </li>
+    </ul>
+</p>
+
+
+<form action ="{% url 'review' %}" method="get">
+    <button type="submit" value={{restaurant.restaurant_number}} name="review">REVIEW THIS RESTAURANT</button>
+</form>
+
+
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'forkilla/base.html' %}
+
+
+{% block content %}
+
+        <!--BREADCRUMB-->
+    {% if city%}
+        {% if category %}
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{%  url 'index' %}">Forkilla</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'restaurants' restaurant.city%}">{{ city}}</a></li>
+              <li class="breadcrumb-item active">{{ category }}</li>
+          </ol>
+        </nav>
+
+        {%  else %}
+
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{%  url 'index' %}">Forkilla</a></li>
+                  <li class="breadcrumb-item active">{{ city }}</li>
+              </ol>
+            </nav>
+
+        {% endif %}
+        {%  else %}
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{%  url 'index' %}">Forkilla</a></li>
+              </ol>
+            </nav>
+
+        {% endif %}
+
+
+    <!--END BREADCRUMB-->
+
+
+{% if restaurants %}
+	{% if promoted %}
+        <h2>Promoted Restaurants</h2>
+    {% endif %}
+    <!--
+    <ul>
+    {% for restaurant in restaurants %}
+    	<li><a href="{% url 'details' restaurant.restaurant_number%}">   {{restaurant.name}}: </a>{{restaurant.menu_description}}</li>
+    {% endfor %}
+    </ul>
+    -->
+{% else %}
+    <p>No restaurants are available.</p>
+{% endif %}
+
+    <form action="{% url 'reservation'%}" method="get">
+     {% for restaurant in restaurants %}
+    	<a href="{% url 'restaurants' restaurant.city restaurant.category%}"> {{restaurant.category}}</a> -
+        <a href="{% url 'details' restaurant.restaurant_number%}">   {{restaurant.name}}: </a>{{restaurant.menu_description}}
+        <button type="submit" name="reservation" value={{restaurant.restaurant_number}}> Reserva</button>
+        <br>
+         <p></p>
+    {% endfor %}
+	</form>
+
+
+{% endblock %}

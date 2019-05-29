@@ -122,7 +122,7 @@ def _check_session(request):
 
     if "viewedrestaurants" not in request.session:
         viewedrestaurants = ViewedRestaurants()
-        #viewedrestaurants.save()
+        viewedrestaurants.save()
         request.session["viewedrestaurants"] = viewedrestaurants.id_vr
     else:
         viewedrestaurants = ViewedRestaurants.objects.get(id_vr=request.session["viewedrestaurants"])

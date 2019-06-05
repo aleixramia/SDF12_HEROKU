@@ -3,5 +3,23 @@
 {% block content %}
 
 <h3> MY PROFILE</h3>
+    <form action="{% url 'cancel'%}" method="post">
+            {% csrf_token %}
+    {% if reservations %}
+     {% for reservation in reservations %}
+         <p>{{ reservation.restaurant }}, el dia {{ reservation.day }} a les {{ reservation.time_slot }}</p>
+         <!--
+         <a href="{% url 'restaurants' restaurant.city restaurant.category%}"> {{restaurant.category}}</a> -
+        <a href="{% url 'details' restaurant.restaurant_number%}">   {{restaurant.name}}: </a>{{restaurant.menu_description}}
+        -->
+        <button type="submit" name="reservation" value={{reservation.id}}> CANCEL</button>
+        <br>
+         <p></p>
+    {% endfor %}
+	</form>
+    {% else %}
+        <p> You haven't done any reservations. Go ahead!</p>
+    {% endif %}
+
 {% endblock %}
 

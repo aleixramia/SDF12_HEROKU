@@ -188,7 +188,10 @@ def review(request):
                 for rev in reviews:
                     sum += int(rev.rating)
                 rating = sum/num_reviews
-                Restaurant.objects.get(restaurant_number=restaurant_number).rate = decimal.Decimal(rating)
+                restaurant = Restaurant.objects.get(restaurant_number=restaurant_number)
+                restaurant.rate = rating
+                restaurant.save()
+
             else:
                 request.session["result"] = form.errors
             return HttpResponseRedirect(reverse('index'))
@@ -223,8 +226,28 @@ def register(request):
 
 @login_required
 def profile(request):
-    return render(request,'forkilla/profile.html')
+    reservations = Reservation.objects.filter(user=request.user,cancelled=False)
+    context = {
+        'reservations': reservations,
+    }
+    return render(request,'forkilla/profile.html', context)
 
+
+@login_required
+def cancel(request):
+    if request.method == 'POST':
+        print(request.POST["reservation"])
+        reservation_id = int(request.POST["reservation"])
+        if(Reservation.objects.get(id=reservation_id)):
+            print(Reservation.objects.get(id=reservation_id).restaurant.name)
+        reserva = Reservation.objects.get(id=reservation_id)
+        reserva.cancelled = True
+        reserva.save()
+        #print("DELETING THE RESERVATION " + reservation)
+        context = {
+            'reservation': 'OK'
+        }
+    return render(request,'forkilla/cancel.html',context)
 
 class RestaurantViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
@@ -233,3 +256,19 @@ class RestaurantViewSet(viewsets.ModelViewSet):
     """
     queryset = Restaurant.objects.all().order_by('category')
     serializer_class = RestaurantSerializer
+
+    def get_queryset(self):
+        queryset = Restaurant.objects.all().order_by('category')
+        category = self.request.query_params.get('category', None)
+        city = self.request.query_params.get('city', None)
+        price = self.request.query_params.get('price', None)
+        if category is not None:
+            queryset = queryset.filter(category=category)
+        if city is not None:
+            queryset = queryset.filter(city=city)
+        if price is not None:
+            queryset = queryset.filter(price_average__lte=price)
+        return queryset
+
+def comparator(request):
+    return render(request,'forkilla/index.html')

@@ -1,0 +1,17 @@
+{% extends 'forkilla/base.html' %}
+
+
+{% block content %}
+
+<h1>Reservation status</h1>
+
+{% if reservation == 'OK'%}
+<h2> Reservation cancelled</h2>
+
+{% else%}
+
+<h2> Reservation not cancelled</h2>
+
+{% endif %}
+
+{% endblock %}

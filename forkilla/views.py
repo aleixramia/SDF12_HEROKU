@@ -12,6 +12,7 @@ from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
+
 from .serializers import RestaurantSerializer
 from rest_framework import permissions
 
@@ -270,5 +271,12 @@ class RestaurantViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(price_average__lte=price)
         return queryset
 
-def comparator(request):
-    return render(request,'forkilla/index.html')
+def comparator(request,ips):
+    return render(request, 'forkilla/comparator.html')
+    """
+    form = ComparatorForm()
+    context = {
+        'form': form
+    }
+    return render(request,'forkilla/comparator.html',context)
+    """

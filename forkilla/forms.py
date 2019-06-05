@@ -11,5 +11,11 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ["text", "rating"]
+"""
+class ComparatorForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ["price_average", "city", "category"]
+"""
 
 

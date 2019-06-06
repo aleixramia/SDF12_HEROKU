@@ -20,15 +20,33 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     function submit_by_name() {
-    var category = document.getElementById("category").value;
-    var price = document.getElementById("price").value;
-    var city = document.getElementById("city").value;
-    if (true) // Calling validation function
-    {
-    var x = document.getElementsByName('form_name');
-    x[0].submit(); //form submission
-        document.getElementById('response_text').innerHTML = "HEY";
+        var category = document.getElementById("category").value;
+        var price = document.getElementById("price").value;
+        var city = document.getElementById("city").value;
+        if (true) // Calling validation function
+        {
+        var x = document.getElementsByName('form_name');
+        //x[0].submit(); //form submission
+        var url = "http://localhost:8000/api/restaurants/?"
+        if(category){
+            url = url + "category=" + category;
+        }
+        if(city){
+            url = url + "&city=" + city;
+        }
+        if(price){
+            url = url + "&price=" + price;
+        }
+        var response = Get(url);
+        document.getElementById('response_text').innerHTML = response;
     }
+    }
+
+    function Get(yourUrl){
+        var Httpreq = new XMLHttpRequest(); // a new request
+        Httpreq.open("GET",yourUrl,false);
+        Httpreq.send(null);
+        return Httpreq.responseText;
     }
 </script>
 <!------ Include the above in your HEAD tag ---------->
@@ -45,6 +63,9 @@
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href='{%url 'restaurants' %}'>Restaurants <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href='/comparator'>Comparator <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
 

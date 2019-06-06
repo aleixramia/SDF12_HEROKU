@@ -27,7 +27,7 @@
         {
         var x = document.getElementsByName('form_name');
         //x[0].submit(); //form submission
-        var url = "http://sd2019-f12-forkilla.herokuapp.com/api/restaurants/?"
+        var url = "https://sd2019-f12-forkilla.herokuapp.com/api/restaurants/?"
         if(category){
             url = url + "category=" + category;
         }
@@ -38,7 +38,7 @@
             url = url + "&price=" + price;
         }
         var response = Get(url);
-        document.getElementById('response_text').innerHTML = response;
+        document.getElementById('response_text').innerHTML = url;
     }
     }
 

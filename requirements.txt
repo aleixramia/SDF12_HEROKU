@@ -1,7 +1,7 @@
 Django==1.11.17
 django-cors-headers==3.0.1
 django-filter==2.1.0
-djangorestframework==3.9.4
+djangorestframework==3.11.2
 django-heroku==0.3.1
 Pillow==6.0.0
 gunicorn==19.9.0
